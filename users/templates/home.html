@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tenis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Encabezado -->
+<header class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <div style="text-align: right; margin: right 100px; color:white">
+            {% if user.is_authenticated %}
+
+            Hola {{user.username}} &nbsp;&nbsp;<a href="{% url 'cerrar_sesion'%}" style="color: white;">Cerrar sesion</a>
+
+            {% else %}
+
+            No autenticado
+
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-20 col-md-4">
+                <img src="{% static 'HS-removebg-preview.png' %}" alt="Logo de la tienda" class="img-fluid" height="150px" width="225px">
+            </div>
+            <div class="col-12 col-md-5">
+                <h1>Sneakers</h1>
+                <nav>
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item"><a class="nav-link text-white" href="/">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/registro">Registro</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/logear">Acceder</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Contenido principal -->
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'airjordan1retrowhitechicago.png' %}" class="card-img-top" alt="Tenis 1">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro High Off-White Chicago </h2>
+                        <p class="card-text">Precio: $106,420</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'nikeairmag.png' %}" class="card-img-top" alt="Tenis 2">
+                    <div class="card-body">
+                        <h2 class="card-title">Nike MAG Back to the Future </h2>
+                        <p class="card-text">Precio: $790,380</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+   
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'louisvuittonairforce1.png' %}" class="card-img-top" alt="Tenis 3">
+                    <div class="card-body">
+                        <h2 class="card-title">Louis Vuitton Nike Air Force 1 Low</h2>
+                        <p class="card-text">Precio: $135,500</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'airjordan1retrohigh.png' %}" class="card-img-top" alt="Tenis 4">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro High Dior </h2>
+                        <p class="card-text">Precio: $130,380</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega más productos aquí -->
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'airjordantravisscott.png' %}" class="card-img-top" alt="Tenis 5">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro Low Travis Scott Reverse Mocha </h2>
+                        <p class="card-text">Precio: $22,360</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'airyeezy2solarred.png' %}" class="card-img-top" alt="Tenis 6">
+                    <div class="card-body">
+                        <h2 class="card-title">Nike Air Yeezy 2 Solar Red</h2>
+                        <p class="card-text">Precio: $247,180</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-2">
+        <p>&copy; 2023 Tienda de Tenis</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
