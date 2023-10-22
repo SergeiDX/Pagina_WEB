@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="{% static 'styles/style-carrito.css' %}"> <!-- Enlaza el archivo CSS externo -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Carrito de Compra</h1>
+        <ul class="cart-list">
+            <li class="cart-item">
+                <img src="{% static 'imagenes/airjordan1retrohigh.png' %}" alt="Tenis 1">
+                <span>Tenis 1</span>
+                <span>$100</span>
+                <button class="remove-button">Eliminar</button>
+            </li>
+            <li class="cart-item">
+                <img src="{% static 'imagenes/airjordan1retrowhitechicago.png' %}" alt="Tenis 2">
+                <span>Tenis 2</span>
+                <span>$80</span>
+                <button class="remove-button">Eliminar</button>
+            </li>
+        </ul>
+        <p class="cart-subtotal">Subtotal: $180</p>
+        <p class="cart-total">Total: $180</p>
+        <!-- Botón incorporado del navegador para retroceder -->
+        <button onclick="window.history.back()" class="back-button">Volver</button>
+        <!-- Enlace para redirigir a la página de confirmación de compra -->
+        <a href="confirmacion.html" class="confirm-button" style="text-align: right;">Confirmar Compra</a>
+
+    </div>
+</body>
+
+</html>

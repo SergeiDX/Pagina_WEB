@@ -1,0 +1,21 @@
+/* Estilo para el icono de carrito */
+.cart-icon {
+    text-decoration: none; /* Quitar subrayado del enlace */
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px; /* Tamaño del icono */
+    transition: color 0.3s; /* Transición de color al pasar el mouse sobre el icono */
+}
+
+/* Utiliza Font Awesome para el icono de carrito */
+.cart-icon::before {
+    content: "\f07a"; /* Código Unicode de un carrito de compra de Font Awesome */
+    font-family: 'Font Awesome 5 Free'; /* Nombre de la fuente de iconos */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+/* Cambia el color del icono al pasar el mouse sobre él */
+.cart-icon:hover {
+    color: #ff6600; /* Color de resaltado al pasar el mouse */
+}

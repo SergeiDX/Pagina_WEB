@@ -1,71 +1,121 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+/*!
+* Bootstrap v5.0.0 (https://getbootstrap.com)
+* Copyright 2011-2021 The Bootstrap Authors
+* Copyright 2011-2021 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Spectral+SC:300,400,500,600,700);
+/*!
+ * Fonts from Google Fonts
+ * https://fonts.google.com/specimen/Spectral+SC
+ */
+/*!
+ * Start with normalized styles
+ */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+::before, ::after {
+    text-decoration: inherit; content: none;
+}
+
+ul, ol {
+    padding: 0;
     margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
-header {
-    background: #000000;
-    color: #000000;
-    text-align: center;
-    padding: 1em 0;
+blockquote, q {
+    quotes: none;
+    &::before, &::after {
+    content: '';
+    content: none;
+    }
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+table {
+    border-collapse: collapse;
 }
 
-nav li {
-    display: inline;
-    margin-right: 20px;
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+abbr[title] {
+    text-decoration: underline; text-decoration: underline dotted;
+    cursor: help;
+    border-bottom: 0;
 }
 
-section.productos {
-    display: flex;
-    justify-content: space-around;
-    padding: 2em;
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
 }
 
-/* Estilos de productos */
-.producto {
-    text-align: center;
+/* Globals */
+html {
+    font-family: sans-serif; line-height: 1.15;
+    -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.producto img {
-    max-width: 100%;
+/* Imports */
+@import url(https://use.fontawesome.com/releases/v5.15.1/css/all.css);
+
+/*!
+ * fontawesome-pro v6.7.0
+ * icons in fontawesome.css
+ * Website: https://fontawesome.com
+ * License: CC BY 4.0 License (https://fontawesome.com/license/free)
+ */
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.eot);
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.woff) format("woff"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-solid-900.svg#fontawesome) format("svg");
 }
 
-.producto h2 {
-    margin: 1em 0;
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
-.producto button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.eot);
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.woff) format("woff"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-regular-400.svg#fontawesome) format("svg");
 }
 
-.producto button:hover {
-    background-color: #555;
+.far {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
 }
 
-/* Estilos del pie de página */
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
-    
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.eot);
+    src: url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.woff) format("woff"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v6.7.0/webfonts/fa-brands-400.svg#fontawesome) format("svg");
 }
 
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+
+/* Más contenido de Bootstrap aquí */
+
+/* Fin del archivo CSS de Bootstrap *
