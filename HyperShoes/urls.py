@@ -19,11 +19,5 @@ from django.urls import path, include
 from users import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    path('', views.home, name='home'),
-    path('signup/', views.signup, name='signup'),
-    path('registro/',views.VRegistro.as_view(), name='registro'),
-    path('cerrar_sesion',views.cerrar_sesion, name='cerrar_sesion'),
-    path('logear',views.logear, name='logear'),
-    path('carrito_compra', include('carrito_compra.urls'))
+    path('', include('users.urls')),
 ]

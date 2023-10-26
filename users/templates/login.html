@@ -1,11 +1,17 @@
+{% extends "base.html" %}
+
 {% load static %}
+
+{% block content %}
 <link rel="stylesheet" href="{% static 'styles/style-login.css' %}">
-<form method="post" action="">
+<form method="POST" action="">
     {% csrf_token %}
     <div style="width: auto; margin:auto;">
         
         {{form}}
+        
         <button type="submit" class="btn btn-success">Ingresar</button>
         <button type="button" onclick="history.back()" class="btn btn-secondary align-right">Regresar</button>
     </div>
 </form>
+{% endblock %}

@@ -50,30 +50,31 @@ def logear(request):
     return render(request, 'login.html',{"form":form})
 
         
-
+def Carrito_compra(request):
+    return render(request,'carrito.html')
 
 
 def home(request):
     return render(request, 'home.html')
 
 
-def signup(request):
-    if request.method == 'GET':
-        return render(request, 'signup.html')
-    else:
-        if request.POST['contrasena'] == request.POST['confirmar-contrasena']:
-            try:                
-                user = User.objects.create_user(username=request.POST['nombre-usuario'],password=request.POST['contrasena'])
-                
-                user.save()
-                login(request, user)
-                return redirect('home')  
-              
-            except:
-                return render(request,'signup.html',{"error2":'el usuario ya existe'})
-        return render(request,'signup.html',{"error":'Las contraseñas no coinciden'})
+#def signup(request):
+#    if request.method == 'GET':
+#        return render(request, 'signup.html')
+#    else:
+#        if request.POST['contrasena'] == request.POST['confirmar-contrasena']:
+#            try:                
+#                user = User.objects.create_user(username=request.POST['nombre-usuario'],password=request.POST['contrasena'])
+#                
+#                user.save()
+#                login(request, user)
+#                return redirect('home')  
+#              
+#            except:
+#                return render(request,'signup.html',{"error2":'el usuario ya existe'})
+#        return render(request,'signup.html',{"error":'Las contraseñas no coinciden'})
         
 
 
-def login(request):
-    return render(request, 'login.html')
+#def login(request):
+ #   return render(request, 'login.html')
