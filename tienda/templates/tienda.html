@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+     <!-- Contenido principal -->
+     <main class="container my-4">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/airjordan1retrowhitechicago.png' %}" class="card-img-top"
+                        alt="Tenis 1">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro High Off-White Chicago </h2>
+                        <p class="card-text">Precio: $106,420</p>
+                        <a href="carrito-compra?id=1" class="btn btn-primary">Comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/nikeairmag.png' %}" class="card-img-top" alt="Tenis 2">
+                    <div class="card-body">
+                        <h2 class="card-title">Nike MAG Back to the Future </h2>
+                        <p class="card-text">Precio: $790,380</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/louisvuittonairforce1.png' %}" class="card-img-top" alt="Tenis 3">
+                    <div class="card-body">
+                        <h2 class="card-title">Louis Vuitton Nike Air Force 1 Low</h2>
+                        <p class="card-text">Precio: $135,500</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/airjordan1retrohigh.png' %}" class="card-img-top" alt="Tenis 4">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro High Dior </h2>
+                        <p class="card-text">Precio: $130,380</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega más productos aquí -->
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/airjordantravisscott.png' %}" class="card-img-top" alt="Tenis 5">
+                    <div class="card-body">
+                        <h2 class="card-title">Jordan 1 Retro Low Travis Scott Mocha</h2>
+                        <p class="card-text">Precio: $22,360</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card mb-4">
+                    <img src="{% static 'imagenes/airyeezy2solarred.png' %}" class="card-img-top" alt="Tenis 6">
+                    <div class="card-body">
+                        <h2 class="card-title">Nike Air Yeezy 2 Solar Red</h2>
+                        <p class="card-text">Precio: $247,180</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
