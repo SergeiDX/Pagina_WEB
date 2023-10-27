@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if user.is_authenticated %}
+
+    {{user.username}} &nbsp;&nbsp;
+
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'styles/style-carrito.css' %}"> <!-- Enlaza el archivo CSS externo -->
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito de Compra</h1>
+        <ul class="cart-list">
+
+{% if request.session.carro.items %}
+{% for key, value in request.session.carro.items %}
+
+
+            <li class="cart-item">
+                <img src="{{ value.imagen }}" class="card-img-top">
+                <span>{{value.marca}}</span>
+                <span>{{value.nombre}}</span>
+                <span>Cant.: {{value.cantidad}}</span>
+                <span>${{value.precio}}</span>
+
+                <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-success">-</a>
+
+                <a href="{% url 'carro:eliminar' value.producto_id %}" <button
+                    class="remove-button">Eliminar</button></a>
+            </li>
+        <!-- Botón incorporado del navegador para retroceder -->
+        <!-- Enlace para redirigir a la página de confirmación de compra -->
+
+
+    {% endfor %}
+    <a href="{% url 'tienda' %}"> <button class="back-button">Volver</button></a>
+    <a href="#" class="confirm-button" style="text-align: right;">Confirmar Compra</a>
+    <!--- no pude implementar esta wea-->
+    <!---<a href="{% url 'carro:limpiar' %}" <button class="remove-button">Eliminar Carrito</button></a>---->
+    <p class="cart-total">Total: {{importe_total_carro}}</p>
+
+</ul>
+
+</div>
+
+</body>
+
+{% else %}
+<div class="alert alert-danger text-center">
+
+    Sin productos
+    
+</div>
+<a href="{% url 'tienda' %}"> <button class="back-button">Volver</button></a>
+
+{% endif %}
+
+</html>
+
+{% endblock %}

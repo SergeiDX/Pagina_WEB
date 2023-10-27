@@ -18,7 +18,7 @@
                         <p class="card-text">Talla: {{producto.talla}} US</p>
                         <p class="card-text">Color: {{producto.color}}</p>
                         <p class="card-text">Precio: ${{producto.precio}} </p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Comprar</a>
 
                     </div>
                 </div>

@@ -49,10 +49,6 @@ def logear(request):
     form=AuthenticationForm()
     return render(request, 'login.html',{"form":form})
 
-        
-def Carrito_compra(request):
-    return render(request,'carrito.html')
-
 
 def home(request):
     return render(request, 'home.html')

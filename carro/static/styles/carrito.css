@@ -3,7 +3,7 @@
     text-decoration: none; /* Quitar subrayado del enlace */
     display: flex;
     align-items: center;
-    color: white;
+    color: rgb(182, 0, 0);
     font-size: 18px; /* Tamaño del icono */
     transition: color 0.3s; /* Transición de color al pasar el mouse sobre el icono */
 }

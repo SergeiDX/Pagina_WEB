@@ -68,11 +68,15 @@
                     </nav>
                 </div>
                 <!-- Agrega un enlace al carrito de compra con un icono -->
+                {% if user.is_authenticated %}
                 <div class="col-2 col-md-3">
                     <a href="{% url 'carrito_compra' %}" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i> Carrito de Compra
                     </a>
                 </div>
+                {% else %}
+
+                {% endif %}
             </div>
         </div>
     </header>
