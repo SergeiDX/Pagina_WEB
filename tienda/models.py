@@ -19,6 +19,7 @@ class Producto(models.Model):
     categorias = models.ForeignKey(CategoriaProd, on_delete=models.CASCADE)
     modelo = models.CharField(max_length=50)
     nombre = models.CharField(max_length=50)
+    color = models.CharField(max_length=50)
     precio = models.FloatField()
     talla = models.CharField(max_length=20)
     imagen = models.ImageField(upload_to='tienda', null=True, blank=True)
