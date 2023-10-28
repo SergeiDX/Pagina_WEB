@@ -1,0 +1,48 @@
+/* Estilos para el contenedor del formulario */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el formulario */
+.my-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para las etiquetas del formulario */
+.my-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilos para los campos de entrada de texto */
+.my-form input[type="text"],
+.my-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilos para el botón de confirmación */
+
+.confirm-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de "Confirmar Compra" */
+.confirm-button {
+    background-color: #06137a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+    margin-left: 280px;
+}

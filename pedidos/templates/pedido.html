@@ -5,14 +5,21 @@
 {% block content %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/envio.css' %}">
 </head>
 <body>
-    
+    <div class="form-container">
+        <form method="POST" class="my-form">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <a href="{% url 'pedidos:procesar_pedido' %}"><button type="submit" class="submit-button">Enviar</button></a>
+            {{ mensaje }}
+
+        </form>
+    </div>
 </body>
 </html>
 

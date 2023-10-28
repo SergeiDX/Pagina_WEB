@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import send_mail
+from .forms import EnvioForm
+from .models import Envio
 
 # Create your views here.
 def pedido2(request):
@@ -50,3 +52,18 @@ def enviar_mail(**kwargs):
     #to= kwargs.get("emailusuario")
     to = kwargs.get("albert_af2000@hotmail.com")
     send_mail(asunto, mensaje_texto,from_email, [to],html_message=mensaje)
+    
+def create(request):
+    
+    form = EnvioForm()
+    
+    data = {'form': form}
+    
+    if request.method == 'POST':
+        formulario = EnvioForm(request.POST)
+        if formulario.is_valid():
+            procesar_pedido(request)
+            
+            formulario.save()
+            data['mensaje'] = "datos guardados correctamente"
+    return render(request, 'pedido.html', { 'form' : form})

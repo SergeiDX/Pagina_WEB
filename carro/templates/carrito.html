@@ -44,7 +44,7 @@
 
     {% endfor %}
     <a href="{% url 'tienda' %}"> <button class="back-button">Volver</button></a>
-    <a href="{% url 'pedido2' %}" class="confirm-button" style="text-align: right;">Confirmar Compra</a>
+    <a href="{% url 'pedidos:envio' %}" class="confirm-button" style="text-align: right;">Confirmar Compra</a>
     <!--- no pude implementar esta wea-->
     <!---<a href="{% url 'carro:limpiar' %}" <button class="remove-button">Eliminar Carrito</button></a>---->
     <p class="cart-total">Total: {{importe_total_carro}}</p>

@@ -66,14 +66,17 @@ class Envio(models.Model):
     Codigo_Postal = models.CharField(max_length=50)
     estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
     paqueteria = models.ForeignKey(Paqueteria, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
-    
+
+        
     class Meta:
         db_table = 'Envio'
         verbose_name= 'Envio'
         verbose_name= 'Envios'
         ordering = ['id']
+        
+        
+    
+    
         
 class Banco(models.Model):
     nombrebanc= models.CharField(max_length=50)
@@ -87,4 +90,3 @@ class Tarjeta(models.Model):
     cvv = models.CharField(max_length=50)
     nombrebanco = models.ForeignKey(Banco, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
