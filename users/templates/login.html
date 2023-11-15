@@ -3,15 +3,92 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'styles/style-login.css' %}">
+
 <form method="POST" action="">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 100px;
+           
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #055160;
+            align-items:stretch ;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: nowrap;
+        }
+        
+        
+        .form-group {
+            margin-bottom: 15px;
+            
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        
+        .btn {
+            display: inline-block;
+            text-align: center;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+           
+        }
+        
+        .btn-success {
+            background-color: #022f38;
+            color: #fff;
+            align-items: stretch;
+        }
+        
+        .btn-success:hover {
+            background-color: #12355a;
+        }
+        
+        .btn-secondary {
+            background-color: #ff6347; 
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ff4500; 
+        }
+        
+        
+        .align-right {
+            margin-left: 100px;
+        } 
+    </style>
     {% csrf_token %}
     <div style="width: auto; margin:auto;">
         
         {{form}}
-        
-        <button type="submit" class="btn btn-success">Ingresar</button>
-        <button type="button" onclick="history.back()" class="btn btn-secondary align-right">Regresar</button>
+        <p>No tienes cuenta?<a href="{% url 'registro' %}">Registrate</a></p>
+        <br>
+        <button type="submit" class="btn btn-success ">Ingresar</button>
+       
     </div>
 </form>
 {% endblock %}

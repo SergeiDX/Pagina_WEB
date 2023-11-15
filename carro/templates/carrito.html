@@ -6,16 +6,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if user.is_authenticated %}
 
-    {{user.username}} &nbsp;&nbsp;
-
-    {% endif %}
-    <link rel="stylesheet" href="{% static 'styles/style-carrito.css' %}"> <!-- Enlaza el archivo CSS externo -->
-</head>
 <body>
     <div class="container">
         <h1>Carrito de Compra</h1>

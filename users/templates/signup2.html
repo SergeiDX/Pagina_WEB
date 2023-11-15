@@ -3,34 +3,114 @@
 {% load static %}
 
 {% block content %}
-<meta charset="GMT-6">
+    <meta charset="GMT-6">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            padding-top: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #055160;
+            align-items: stretch;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: nowrap;
+        }
+        
+      
+        
+        /* Estilos para los campos del formulario */
+        .form-group {
+            margin-bottom: 30px;
+            
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        /* Estilos para los botones */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: #022f38;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background-color: #12355a;
+        }
+        
+        .btn-secondary {
+            background-color: #ff6347; /* Cambia el color a rojo */
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ff4500; /* Cambia el color al hover */
+        }
+        /* Agrega un margen a la izquierda para alinear el botón a la derecha */
+        .align-right {
+            margin-left: 50%;
+        }
+    </style>
+    <body>
+    <div class="padre">
+    <form method="post" action="" class="registro">
+        {% csrf_token %}
+    
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}"></label>
+            {#} {{ form.username }} {#}
+        </div>
+    
+    
+        <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}"></label>
+           {#} {{ form.password1 }} {#}
+        </div>
+    
+        <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}"></label>
+           {#} {{ form.password2 }} {#}
+           {{ form }}
+    
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+         <!-- Botón para regresar a la página anterior -->
+       
+        </form>
+    </body>
+    {% endblock %}
 
-<link rel="stylesheet" href="{% static 'styles/signup2.css' %}">
-
-<form method="post" action="">
-    {% csrf_token %}
-
-    <div class="form-group">
-        <label for="{{ form.username.id_for_label }}"></label>
-        {#} {{ form.username }} {#}
-    </div>
 
 
-    <div class="form-group">
-        <label for="{{ form.password1.id_for_label }}"></label>
-       {#} {{ form.password1 }} {#}
-    </div>
 
-    <div class="form-group">
-        <label for="{{ form.password2.id_for_label }}"></label>
-       {#} {{ form.password2 }} {#}
-        {{ form }}
 
-    </div>
-
-    <button type="submit" class="btn btn-primary">Registrarse</button>
-     <!-- Botón para regresar a la página anterior -->
-     <button type="button" onclick="history.back()" class="btn btn-secondary align-right">Regresar</button>
-    </form>
-
-{% endblock %}

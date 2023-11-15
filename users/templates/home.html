@@ -6,6 +6,49 @@
 
 {% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nose{
+            width: 400px;
+            height: 400px;
+            border-radius: 10%;
+        }
+        .imagenes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5%;
+        }
+
+        .nose:hover{
+            opacity: 0.07;
+            -webkit-transition: opacity 500ms;
+            -moz-transition: opacity 500ms;
+            -o-transition: opacity 500ms;
+            -ms-transition: opacity 500ms;
+            transition: opacity 500ms;
+        }
+        marquee{
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior="" direction="" scrolldelay="5">Registrarse para comprar</marquee>
+    <div class="imagenes">
+    <img src="{% static 'imagenes/1.jpg' %}" alt="" class="nose">
+    <img src="{% static 'imagenes/jordan.jpg' %}" alt="" class="nose">
+    <img src="{% static 'imagenes/offwhite.jpg' %}" alt="" class="nose">
+    <img src="{% static 'imagenes/doit.jpg' %}" alt="" class="nose">
+    </div>
+</body>
+</html>
 
 
    

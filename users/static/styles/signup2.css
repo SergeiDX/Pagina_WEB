@@ -7,16 +7,29 @@ body {
 form {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
+    padding-top: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #055160;
+    align-items: stretch;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: nowrap;
+}
+
+.padre{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Estilos para los campos del formulario */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    
 }
 
 label {
@@ -62,6 +75,6 @@ input[type="password"] {
 }
 /* Agrega un margen a la izquierda para alinear el botón a la derecha */
 .align-right {
-    margin-left: 190px;
+    margin-left: 50%;
 }
 
